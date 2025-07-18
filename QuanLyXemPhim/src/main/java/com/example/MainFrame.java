@@ -28,7 +28,9 @@ public class MainFrame extends JFrame {
         JMenuItem menuPhongChieu = new JMenuItem("Quản lý phòng chiếu");
         JMenuItem menuDatVe = new JMenuItem("Đặt vé");
         JMenuItem menuThanhToan = new JMenuItem("Thanh toán");
+        JMenuItem menuNewsOffers = new JMenuItem("Tin tức & Ưu đãi");
         
+        menuChucNang.add(menuNewsOffers);
         menuChucNang.add(menuPhim);
         menuChucNang.add(menuSuatChieu);
         menuChucNang.add(menuPhongChieu);
@@ -50,6 +52,7 @@ public class MainFrame extends JFrame {
         menuPhongChieu.addActionListener(e -> setMainPanel(new RapPanel()));
         menuDatVe.addActionListener(e -> setMainPanel(new DatVePanel()));
         menuThanhToan.addActionListener(e -> setMainPanel(new ThanhToanPanel()));
+        menuNewsOffers.addActionListener(e -> setMainPanel(new NewsAndOffersPanel()));
     }
 
     private void setMainPanel(JPanel panel) {
