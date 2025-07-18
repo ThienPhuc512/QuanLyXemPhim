@@ -23,7 +23,10 @@ public class LoginController {
         User user = model.authenticate(username, password, role);
         if (user != null) {
             view.showMessage("Đăng nhập thành công với vai trò: " + user.getRole());
-            // Ở đây bạn có thể mở MainFrame hoặc giao diện tương ứng
+            view.dispose();
+            javax.swing.SwingUtilities.invokeLater(() -> {
+                new com.example.MainFrame().setVisible(true);
+            });
         } else {
             view.showMessage("Sai thông tin đăng nhập!");
         }
