@@ -41,7 +41,19 @@ public class MainFrame extends JFrame {
 
         // Main panel
         mainPanel = new JPanel(new BorderLayout());
-        JLabel welcomeLabel = new JLabel("Chào mừng đến với hệ thống quản lý đặt vé xem phim!", SwingConstants.CENTER);
+        mainPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(30, 30, 30, 30)); // Padding 30px
+        mainPanel.setBackground(java.awt.Color.WHITE); // Nền trắng
+
+        // Thêm logo CGV nếu có file logo, nếu không thì bỏ qua dòng này
+        // JLabel logoLabel = new JLabel(new javax.swing.ImageIcon("src/main/resources/cgv_logo.png"));
+        // logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        JLabel welcomeLabel = new JLabel("Chào mừng đến với CGV Cinema!", SwingConstants.CENTER);
+        welcomeLabel.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 32));
+        welcomeLabel.setForeground(new java.awt.Color(231, 26, 15)); // Đỏ CGV
+        welcomeLabel.setOpaque(false);
+
+        // mainPanel.add(logoLabel, BorderLayout.NORTH); // Bỏ comment nếu có logo
         mainPanel.add(welcomeLabel, BorderLayout.CENTER);
         setLayout(new BorderLayout());
         add(mainPanel, BorderLayout.CENTER);
